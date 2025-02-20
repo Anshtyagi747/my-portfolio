@@ -6,6 +6,11 @@
     <title>My Portfolio</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
         body {
             background: rgba(173, 216, 230, 0.7); /* Light Blue Glass Effect */
             backdrop-filter: blur(10px);
@@ -16,9 +21,11 @@
             align-items: center;
             height: 100vh;
             margin: 0;
+            padding: 20px;
         }
         .container {
             display: flex;
+            flex-wrap: wrap;
             width: 90%;
             max-width: 1200px;
             background: rgba(255, 255, 255, 0.8); /* Light Glass Box */
@@ -27,43 +34,34 @@
             box-shadow: 0 8px 16px rgba(196, 178, 96, 0.1);
         }
         .sidebar {
-            margin: auto;
-            background-color: antiquewhite;
-            padding: auto;
-            border-radius: 30px;
-            margin-bottom: 90px;
-
-
-            width: 30%;
+            width: 100%;
+            max-width: 300px;
             text-align: center;
+            background-color: antiquewhite;
             padding: 20px;
+            border-radius: 30px;
+            margin-bottom: 20px;
         }
         .profile-pic {
-            width: 100px;
-            height: 100px;
+            width: 120px;
+            height: 120px;
             border-radius: 50%;
             margin-bottom: 15px;
         }
         .main-content {
-            width: 70%;
+            flex: 1;
             display: flex;
             flex-direction: column;
             align-items: center;
             padding: 20px;
         }
-        .hero-image {
-            width: 200px; /* Reduced image size */
-            height: auto;
-            margin-top: 10px;
-        }
         .hero-text {
-            margin-top: 10px;
             background-color: #eca0bd;
-            padding: 10px;
-            border-radius: 7px;
-            width: 80%;
+            padding: 15px;
+            border-radius: 10px;
             text-align: center;
-            margin-bottom: 20px;
+            width: 100%;
+            max-width: 500px;
         }
         .hero-text h1 {
             font-size: 24px;
@@ -81,10 +79,17 @@
             border-radius: 5px;
             cursor: pointer;
             transition: 0.3s ease-in-out;
+            margin-top: 10px;
         }
         .animated-btn:hover {
             background: #0056b3;
             transform: scale(1.05);
+        }
+        .hero-image {
+            width: 100%;
+            max-width: 250px;
+            height: auto;
+            margin-top: 10px;
         }
         #about {
             margin-top: 20px;
@@ -92,35 +97,49 @@
             padding: 15px;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            width: 80%;
             text-align: center;
+            width: 100%;
+            max-width: 500px;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            body {
+                height: auto;
+                padding: 10px;
+            }
+            .container {
+                flex-direction: column;
+                align-items: center;
+            }
+            .sidebar {
+                width: 100%;
+            }
+            .main-content {
+                width: 100%;
+            }
+            .hero-text, #about {
+                width: 100%;
+                max-width: 90%;
+            }
+            .hero-image {
+                max-width: 200px;
+            }
         }
     </style>
 </head>
 <body>
-    
     <div class="container">
-        <body>
-
-            <body style="background-color:powderblue;">
-
-                <h1><u>MY PORTFOLIO</u></h1>
-               
-                
-                </body>
-
-
         <div class="sidebar">
+            <h1><u>MY PORTFOLIO</u></h1>
             <img src="pixelcut-export.png" alt="Profile Picture" class="profile-pic">
             <h2>ANSH TYAGI</h2>
             <p>BCA 1ST YEAR STUDENT OF GALGOTIAS UNIVERSITY</p>
-            <P><u>anshtyagi746@gmail.com</u></P>
+            <p><u>anshtyagi746@gmail.com</u></p>
             <p><u>9311703705</u></p>
             <nav>
                 <ul>
-                    
-                    <li><a href="https://anshtyagi747.github.io/mamu-s-website/">my 1st project</a></li>
-                  
+                    <li><a href="https://anshtyagi747.github.io/mamu-s-website/">My 1st Project</a></li>
                 </ul>
             </nav>
         </div>
@@ -130,9 +149,9 @@
                 <div class="hero-text">
                     <h1>I am a WEB DEVELOPER</h1>
                     <p>Passionate about web development and coding.</p>
-                   <a href="https://wa.me/+919311703705">
-                    <button class="animated-btn">Contact</button>
-                   </a>
+                    <a href="https://wa.me/+919311703705">
+                        <button class="animated-btn">Contact</button>
+                    </a>
                 </div>
                 <img src="3d-portrait-people_23-2150793856.avif" alt="Designer Image" class="hero-image">
             </section>
